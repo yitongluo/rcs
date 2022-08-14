@@ -22,7 +22,7 @@
           :key="index"
           @click="setActiveCase(Case, index)"
         >
-          {{ Case.candidateName }}
+          {{ case.candidateName }}
         </li>
       </ul>
 
@@ -43,7 +43,7 @@
           <label><strong>Status:</strong></label> {{ currentCase.published ? "Published" : "Pending" }}
         </div>
 
-        <router-link :to="'/Cases/' + currentCase.id" class="badge badge-warning">Edit</router-link>
+        <router-link :to="'/cases/' + currentCase.id" class="badge badge-warning">Edit</router-link>
       </div>
       <div v-else>
         <br />
@@ -56,7 +56,7 @@
 <script>
 import CaseDataService from "../services/CaseDataService";
 export default {
-  name: "Cases-list",
+  name: "cases-list",
   data() {
     return {
       Cases: [],

@@ -57,7 +57,7 @@
 <script>
 import CaseDataService from "../services/CaseDataService";
 export default {
-  name: "Case",
+  name: "case",
   data() {
     return {
       currentCase: null,
