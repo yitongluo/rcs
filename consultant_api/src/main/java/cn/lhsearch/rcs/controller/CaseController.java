@@ -30,14 +30,14 @@ public class CaseController {
 	CaseRepository caseRepository;
 
 	@GetMapping("/cases")
-	public ResponseEntity<List<Case>> getAll(@RequestParam(required = false) String name) {
+	public ResponseEntity<List<Case>> getAll(@RequestParam(required = false) String candidateName) {
 		try {
 			List<Case> cases = new ArrayList<Case>();
 
-			if (name == null)
+			if (candidateName == null)
 				caseRepository.findAll().forEach(cases::add);
 			else 
-				caseRepository.findByCandidateNameContaining(name).forEach(cases::add);
+				caseRepository.findByCandidateNameContaining(candidateName).forEach(cases::add);
 
 			if (cases.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
