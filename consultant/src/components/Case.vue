@@ -18,7 +18,7 @@
     
       <div class="form-group">
         <label><strong>Status:</strong></label>
-        {{ currentTutorial.published ? "Published" : "Pending" }}
+        {{ currentCase.published ? "Published" : "Pending" }}
       </div>
     </form>
 
@@ -57,7 +57,7 @@
 <script>
 import CaseDataService from "../services/CaseDataService";
 export default {
-  name: "case",
+  name: "Case",
   data() {
     return {
       currentCase: null,
@@ -106,7 +106,7 @@ export default {
       CaseDataService.delete(this.currentCase.id)
         .then(response => {
           console.log(response.data);
-          this.$router.push({ name: "Cases" });
+          this.$router.push({ name: "cases" });
         })
         .catch(e => {
           console.log(e);

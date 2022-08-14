@@ -4,7 +4,7 @@
       <router-link to="/" class="navbar-brand">lhsearch</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/Cases" class="nav-link">Cases</router-link>
+          <router-link to="/cases" class="nav-link">Cases List</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/add" class="nav-link">Add</router-link>

@@ -64,7 +64,7 @@ public class CaseController {
 	public ResponseEntity<Case> createCase(@RequestBody Case case1) {
 		try {
 			Case _case = caseRepository
-					.save(new Case(case1.getName(), case1.getAccessCode(), case1.getPublished()));
+					.save(new Case(case1.getCandidateName(), case1.getAccessCode(), case1.getPublished()));
 			return new ResponseEntity<>(_case, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -77,7 +77,7 @@ public class CaseController {
 
 		if (caseData.isPresent()) {
 			Case _Case = caseData.get();
-			_Case.setCandidateName(case1.getName());
+			_Case.setCandidateName(case1.getCandidateName());
 			_Case.setAccessCode(case1.getAccessCode());
 			_Case.setPublished(case1.getPublished());
 			return new ResponseEntity<>(caseRepository.save(_Case), HttpStatus.OK);

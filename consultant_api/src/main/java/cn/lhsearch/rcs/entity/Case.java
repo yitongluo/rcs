@@ -33,7 +33,7 @@ public class Case {
 		return id;
 	}
 
-	public String getName() {
+	public String getCandidateName() {
 		return candidateName;
 	}
 

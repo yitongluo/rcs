@@ -18,11 +18,11 @@
       <ul class="list-group">
         <li class="list-group-item"
           :class="{ active: index == currentIndex }"
-          v-for="(Case, index) in Cases"
+          v-for="(_case, index) in cases"
           :key="index"
-          @click="setActiveCase(Case, index)"
+          @click="setActiveCase(_case, index)"
         >
-          {{ case.candidateName }}
+          {{ _case.candidateName }}
         </li>
       </ul>
 
@@ -59,7 +59,7 @@ export default {
   name: "cases-list",
   data() {
     return {
-      Cases: [],
+      cases: [],
       currentCase: null,
       currentIndex: -1,
       candidateName: ""
@@ -69,7 +69,7 @@ export default {
     retrieveCases() {
       CaseDataService.getAll()
         .then(response => {
-          this.Cases = response.data;
+          this.cases = response.data;
           console.log(response.data);
         })
         .catch(e => {
@@ -99,7 +99,7 @@ export default {
     searchName() {
       CaseDataService.findByName(this.candidateName)
         .then(response => {
-          this.Cases = response.data;
+          this.cases = response.data;
           this.setActiveCase(null);
           console.log(response.data);
         })
