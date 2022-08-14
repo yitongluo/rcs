@@ -6,7 +6,7 @@
           v-model="candidateName"/>
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button"
-            @click="search"
+            @click="searchCandidateName"
           >
             Search
           </button>
@@ -96,7 +96,7 @@ export default {
         });
     },
     
-    searchName() {
+    searchCandidateName () {
       CaseDataService.findByName(this.candidateName)
         .then(response => {
           this.cases = response.data;
