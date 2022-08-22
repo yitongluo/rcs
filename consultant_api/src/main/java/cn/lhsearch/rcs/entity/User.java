@@ -1,60 +1,58 @@
 package cn.lhsearch.rcs.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "consultant_user")
 public class User {
-    @Id
-	@Column(name = "wechat_open_id")
-    private String weChatOpenId;
 
-	@Column(name = "wechat_union_id")
-    private String weChatUnionId;
+  @Id
+  @NotBlank
+  @Size(max = 50)
+  @Email
+  private String email;
 
-	@Column(name = "wechat_nick_name")
-    private String weChatNickName;
+  @NotBlank
+  @Size(max = 120)
+  private String password;
 
-    @Column(name = "is_approved")
-    private boolean isApproved;
+  private boolean isApproved;
 
-    public String getWeChatOpenId()
-    {
-        return this.weChatOpenId;
-    }
 
-    public void setWeChatOpenId(String value)
-    {
-        this.weChatOpenId = value;
-    }
+  public User() {
+  }
 
-    public String getWeChatUnionId()
-    {
-        return this.weChatUnionId;
-    }
+  public User(String email, String password) {
+    this.email = email;
+    this.password = password;
+  }
 
-    public void setWeChatUnionId(String value)
-    {
-        this.weChatUnionId = value;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getWeChatNickName()
-    {
-        return this.weChatNickName;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setWeChatNickName(String value)
-    {
-        this.weChatNickName = value;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public boolean getIsApproved()
-    {
-        return this.isApproved;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public void setIsApproved(boolean value)
-    {
-        this.isApproved = value;
-    }
+  public boolean getIsApproved()
+  {
+    return this.isApproved;
+  }
+
+  public void setIsApproved(boolean isApproved)
+  {
+    this.isApproved = isApproved;
+  }
 }
