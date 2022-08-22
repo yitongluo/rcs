@@ -23,7 +23,7 @@ import cn.lhsearch.rcs.repository.*;
 import cn.lhsearch.rcs.entity.*;
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class CaseController {
 
 	@Autowired

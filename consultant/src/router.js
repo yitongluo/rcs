@@ -13,6 +13,11 @@ const routes =  [
     component: () => import("./components/Case")
   },
   {
+    path: "/register",
+    name: "register",
+    component: () => import("./components/Register")
+  },
+  {
     path: "/add",
     name: "add",
     component: () => import("./components/AddCase")
