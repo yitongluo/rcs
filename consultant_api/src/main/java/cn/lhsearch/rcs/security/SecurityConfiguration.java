@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import cn.lhsearch.rcs.security.jwt.JwtAuthenticationEntryPoint;
 import cn.lhsearch.rcs.security.jwt.JwtRequestFilter;
-import cn.lhsearch.rcs.service.UserDetailsServiceImpl;
 
 @Configuration
 public class SecurityConfiguration {

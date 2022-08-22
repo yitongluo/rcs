@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import cn.lhsearch.rcs.service.UserDetailsServiceImpl;
+import cn.lhsearch.rcs.security.UserDetailsServiceImpl;
 
 
 @Component

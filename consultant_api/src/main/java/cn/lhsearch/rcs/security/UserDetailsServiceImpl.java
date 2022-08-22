@@ -1,4 +1,4 @@
-package cn.lhsearch.rcs.service;
+package cn.lhsearch.rcs.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package cn.lhsearch.rcs.service;
+package cn.lhsearch.rcs.security;
 
 import java.util.ArrayList;
 import java.util.Collection;

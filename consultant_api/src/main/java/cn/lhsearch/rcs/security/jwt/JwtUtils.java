@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import cn.lhsearch.rcs.service.UserDetailsImpl;
+import cn.lhsearch.rcs.security.UserDetailsImpl;
 import io.jsonwebtoken.*;
 
 @Component
