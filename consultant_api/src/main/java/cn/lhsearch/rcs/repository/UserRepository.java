@@ -9,7 +9,7 @@ import cn.lhsearch.rcs.entity.User;
 
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, String> {
   Optional<User> findByEmail(String email);
 
   Boolean existsByEmail(String email);
