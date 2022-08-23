@@ -13,14 +13,24 @@ const routes =  [
     component: () => import("./components/Case")
   },
   {
+    path: "/add",
+    name: "add",
+    component: () => import("./components/AddCase")
+  },
+  {
     path: "/register",
     name: "register",
     component: () => import("./components/Register")
   },
   {
-    path: "/add",
-    name: "add",
-    component: () => import("./components/AddCase")
+    path: "/login",
+    name: "login",
+    component: () => import("./components/Login")
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: () => import("./components/Profile")
   }
 ];
 
