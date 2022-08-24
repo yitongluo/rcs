@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import CaseDataService from "../services/CaseDataService";
+import CaseApi from "../api/CaseApi";
 export default {
   name: "cases-list",
   data() {
@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     retrieveCases() {
-      CaseDataService.getAll()
+      CaseApi.getAll()
         .then(response => {
           this.cases = response.data;
           console.log(response.data);
@@ -86,7 +86,7 @@ export default {
       this.currentIndex = inputcase ? index : -1;
     },
     removeAllCases() {
-      CaseDataService.deleteAll()
+      CaseApi.deleteAll()
         .then(response => {
           console.log(response.data);
           this.refreshList();
@@ -97,7 +97,7 @@ export default {
     },
     
     searchCandidateName () {
-      CaseDataService.findByName(this.candidateName)
+      CaseApi.findByName(this.candidateName)
         .then(response => {
           this.cases = response.data;
           this.setActiveCase(null);

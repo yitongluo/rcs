@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import CaseDataService from "../services/CaseDataService";
+import CaseApi from "../api/CaseApi";
 export default {
   name: "add-case",
   data() {
@@ -55,7 +55,7 @@ export default {
         candidateName: this.Case.candidateName,
         accessCode: this.Case.accessCode
       };
-      CaseDataService.create(data)
+      CaseApi.create(data)
         .then(response => {
           this.Case.id = response.data.id;
           console.log(response.data);

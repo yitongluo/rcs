@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import CaseDataService from "../services/CaseDataService";
+import CaseApi from "../api/CaseApi";
 export default {
   name: "Case",
   data() {
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     getCase(id) {
-      CaseDataService.get(id)
+      CaseApi.get(id)
         .then(response => {
           this.currentCase = response.data;
           console.log(response.data);
@@ -82,7 +82,7 @@ export default {
         accessCode: this.accessCode,
         status: status, 
       };
-      CaseDataService.update(this.currentCase.id, data)
+      CaseApi.update(this.currentCase.id, data)
         .then(response => {
           console.log(response.data);
           this.currentCase.status = status;
@@ -93,7 +93,7 @@ export default {
         });
     },
     updateCase() {
-      CaseDataService.update(this.currentCase.id, this.currentCase)
+      CaseApi.update(this.currentCase.id, this.currentCase)
         .then(response => {
           console.log(response.data);
           this.message = 'The Case was updated successfully!';
@@ -103,7 +103,7 @@ export default {
         });
     },
     deleteCase() {
-      CaseDataService.delete(this.currentCase.id)
+      CaseApi.delete(this.currentCase.id)
         .then(response => {
           console.log(response.data);
           this.$router.push({ name: "cases" });

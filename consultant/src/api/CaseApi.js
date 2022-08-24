@@ -3,7 +3,7 @@ import axios from 'axios';
 import authHeader from "./auth-header";
 const API_URL = 'http://localhost:8080/';
 
-class CaseDataService {
+class CaseApi {
   getAll() {
     return axios.get(API_URL + "cases", { headers: authHeader() });
   }
@@ -33,4 +33,4 @@ class CaseDataService {
   }
 }
 
-export default new CaseDataService();
+export default new CaseApi();
