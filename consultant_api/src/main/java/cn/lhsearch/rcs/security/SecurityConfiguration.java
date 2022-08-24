@@ -45,6 +45,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
+        .cors().and()
     // don't authenticate this particular request
     .authorizeRequests().antMatchers("/auth/*").permitAll().
     // all other requests need to be authenticated

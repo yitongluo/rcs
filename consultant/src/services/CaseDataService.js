@@ -1,8 +1,11 @@
 import http from "../http-common";
+import axios from 'axios';
+import authHeader from "./auth-header";
+const API_URL = 'http://localhost:8080/';
 
 class CaseDataService {
   getAll() {
-    return http.get("/cases");
+    return axios.get(API_URL + "cases", { headers: authHeader() });
   }
 
   get(id) {
