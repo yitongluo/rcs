@@ -20,7 +20,7 @@ service.interceptors.request.use(config => {
 
 // axios响应拦截器
 service.interceptors.response.use(response => {
-    return response.data
+    return response
 }, error => {
     // console.log('看一看', error.response)
     const { status } = error.response
