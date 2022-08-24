@@ -33,11 +33,3 @@ service.interceptors.response.use(response => {
 })
 
 export default service
-
-
-// export default axios.create({
-//   baseURL: "http://localhost:8080/",
-//   headers: {
-//     "Content-type": "application/json"
-//   }
-// });
