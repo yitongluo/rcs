@@ -29,6 +29,12 @@
         </div>
 
         <div class="form-group">
+          <li class="nav-item">
+            <router-link to="/register" class="nav-link">No Account Please Register</router-link>
+          </li>
+        </div>
+
+        <div class="form-group">
           <div v-if="message" class="alert alert-danger" role="alert">
             {{ message }}
           </div>
