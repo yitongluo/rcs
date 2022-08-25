@@ -10,19 +10,22 @@
 
       <div v-if="currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link to="/cases" class="nav-link">Cases List</router-link>
+          <router-link to="/cases" class="nav-link">背调管理</router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/add " class="nav-link">Add</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/profile" class="nav-link">Profile</router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" @click.prevent="logOut">
-            <font-awesome-icon icon="sign-out-alt" /> LogOut
-          </a>
-        </li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            用户
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="m-3 btn btn-sm btn-danger" @click.prevent="logOut">
+              LogOut
+            </button>
+            <button class="m-3 btn" @click.prevent="viewProfile">
+              View Profile
+            </button>
+          </div>
+        </div>
+        
       </div>
     </nav>
     <div class="container mt-3">
@@ -42,6 +45,9 @@ export default {
     logOut() {
       this.$store.dispatch('auth/logout');
       this.$router.push('/login');
+    },
+    viewProfile() {
+      this.$router.push('/profile')
     }
   }
 };

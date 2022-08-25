@@ -13,43 +13,39 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <h4>Cases List</h4>
-      <ul class="list-group">
-        <li class="list-group-item"
+      <table class="table table-striped">
+        <th scope="col"
           :class="{ active: index == currentIndex }"
           v-for="(_case, index) in cases"
           :key="index"
           @click="setActiveCase(_case, index)"
         >
           {{ _case.candidateName }}
-        </li>
-      </ul>
+        </th>
+        <div v-if="currentCase">
+          <router-link :to="'/cases/' + currentCase.id" class="badge badge-warning">Edit</router-link>
+        </div>
+      </table>
 
       <button class="m-3 btn btn-sm btn-danger" @click="removeAllCases">
         Remove All
       </button>
+      <button class="btn btn-outline-dark" @click="gotoAdd">
+        Add Case
+      </button>
     </div>
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <div v-if="currentCase">
-        <h4>Case</h4>
-        <div>
-          <label><strong>candidateName:</strong></label> {{ currentCase.candidateName }}
-        </div>
-        <div>
-          <label><strong>accessCode:</strong></label> {{ currentCase.accessCode }}
-        </div>
-        <div>
-          <label><strong>Status:</strong></label> {{ currentCase.published ? "Published" : "Pending" }}
-        </div>
-
         <router-link :to="'/cases/' + currentCase.id" class="badge badge-warning">Edit</router-link>
       </div>
       <div v-else>
         <br />
         <p>Please click on a Case...</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -75,6 +71,9 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+    gotoAdd() {
+      this.$router.push('/add')
     },
     refreshList() {
       this.retrieveCases();
